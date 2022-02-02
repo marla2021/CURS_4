@@ -11,6 +11,7 @@ class UnitClass:
     armor: float
     skill: ConcreteSkill
 
+
 Warrior = UnitClass(
     name = "Воин",
     max_health = 60.0,
@@ -19,6 +20,8 @@ Warrior = UnitClass(
     stamina = 0.9,
     armor = 1.2,
     skill = None
+)
+
 
 Thief = UnitClass(
     name = "Вор",
@@ -28,4 +31,5 @@ Thief = UnitClass(
     stamina = 1.2,
     armor = 1,
     skill = None
+)
 
