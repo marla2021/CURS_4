@@ -20,7 +20,7 @@ Warrior = UnitClass(
     armor = 1.2,
     skill = None
 
-Warrior = UnitClass(
+Thief = UnitClass(
     name = "Вор",
     max_health = 50.0,
     max_stamina = 25.0,
