@@ -1,8 +1,8 @@
 from abc import ABC
-from slills import Skill
+from skills import Skill
 
 class UnitClass(ABC):
-    name: str = NotImpl
+    name: str
     max_health: float
     max_stamina: float
     attack: float
@@ -18,7 +18,7 @@ class Warrior(UnitClass):
     attack = 0.8,
     stamina = 0.9,
     armor = 1.2,
-    skill = kick
+    skill = Skill
 
 
 class Thief(UnitClass):

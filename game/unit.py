@@ -1,7 +1,9 @@
-from abc import ABC
-from typing import Type
+from __future__ import annotations
+from abc import ABC, abstractmethod
+from typing import Type, Optional
 from classes import Unitclass
-
+from random import randit
+from equipment import Armor, Weapon
 
 BASE_STAMINA_PER_ROUND = 0.5
 
@@ -15,7 +17,6 @@ class Hero(ABC):
         self.weapon = weapon
         self.armor = armor
         self.skill_used: bool = False
-
 
     @property
     def hp(self):
@@ -67,10 +68,10 @@ class Hero(ABC):
             return round(self.unit_class.damage, 1)
         return None
 
-
     @abstractmethod
     def hit(self, target: Hero) -> Optional[float]:
         pass
+
 
 class Enemy(Hero):
     def hit(self, target: Hero) -> Optional[float]:
