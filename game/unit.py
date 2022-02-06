@@ -1,15 +1,15 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Type, Optional
-from classes import Unitclass
-from random import randit
+from classes import UnitClass
 from equipment import Armor, Weapon
+
 
 BASE_STAMINA_PER_ROUND = 0.5
 
 
 class Hero(ABC):
-    def __init__(self, name: str, unit_class: Type[Unitclass], weapon: Weapon, armor: Armor):
+    def __init__(self, name: str, unit_class: Type[UnitClass], weapon: Weapon, armor: Armor):
         self.name = name
         self.unit_class = unit_class
         self.hp = self.unit_class.max_health
@@ -77,4 +77,9 @@ class Enemy(Hero):
     def hit(self, target: Hero) -> Optional[float]:
         if randit(0, 100) < self.stamina >= self.unit_class.stamina and not self.skill_used:
             self.use_skill()
+        return self._hit(target)
+
+
+class Player(Hero):
+    def hit(self, target: Hero) -> Optional[float]:
         return self._hit(target)

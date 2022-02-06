@@ -1,5 +1,6 @@
 from abc import ABC
-from skills import Skill
+from skills import kick, thrust, Skill
+
 
 class UnitClass(ABC):
     name: str
@@ -18,7 +19,7 @@ class Warrior(UnitClass):
     attack = 0.8,
     stamina = 0.9,
     armor = 1.2,
-    skill = Skill
+    skill = kick
 
 
 class Thief(UnitClass):
